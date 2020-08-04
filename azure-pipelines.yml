@@ -59,8 +59,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
-  condition: succeeded()
-
   condition: |
   and
   (
@@ -68,3 +66,5 @@ steps:
     eq(variables['Build.Reason'], 'PullRequest'),
     eq(variables['System.PullRequest.TargetBranch'], 'master')
   )
+
+  
